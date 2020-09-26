@@ -52,12 +52,14 @@ import { Route, RouterModule } from '@angular/router';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { FavouriteCourseComponent } from './favourite-course/favourite-course.component';
 import { CourseComponent } from './course/course.component';
+import { CourseGuardService } from './course-guard.service';
 
 const routes: Route[] = [
   { path: 'dashboard', component: DashboardComponent },
   {
     path: 'courses',
     component: CoursesComponent,
+    canActivate: [ CourseGuardService ],
     children: [
       { path: 'my-courses', component: MyCoursesComponent },
       { path: 'favourite', component: FavouriteCourseComponent },
