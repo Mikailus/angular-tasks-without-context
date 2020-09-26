@@ -25,6 +25,8 @@ import { NoDataAvailableComponent } from './no-data-available/no-data-available.
 import { CanBeVisibleDirective } from './can-be-visible.directive';
 import { ModuloPipe } from './modulo.pipe';
 import { ModuloExamplesComponent } from './modulo-examples/modulo-examples.component';
+import { CeilPipe } from './ceil.pipe';
+import { CeilExamplesComponent } from './ceil-examples/ceil-examples.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ModuloExamplesComponent } from './modulo-examples/modulo-examples.compo
     NoDataAvailableComponent,
     CanBeVisibleDirective,
     ModuloPipe,
-    ModuloExamplesComponent
+    ModuloExamplesComponent,
+    CeilPipe,
+    CeilExamplesComponent
   ],
   imports: [
     BrowserModule
