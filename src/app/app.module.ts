@@ -16,6 +16,7 @@ import { SizesComponent } from './sizes/sizes.component';
 import { SizeComponent } from './size/size.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { RandomImageComponent } from './random-image/random-image.component';
+import { OnMouseoverEnlargeDirective } from './on-mouseover-enlarge.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RandomImageComponent } from './random-image/random-image.component';
     SizesComponent,
     SizeComponent,
     IndicatorComponent,
-    RandomImageComponent
+    RandomImageComponent,
+    OnMouseoverEnlargeDirective
   ],
   imports: [
     BrowserModule
