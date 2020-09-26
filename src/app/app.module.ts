@@ -7,6 +7,9 @@ import { AsideComponent } from './aside/aside.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainSectionComponent } from './main-section/main-section.component';
 import { CardComponent } from './card/card.component';
+import { ButtonComponent } from './button/button.component';
+import { RandomTextComponentComponent } from './random-text-component/random-text-component.component';
+import { ButtonAndRandomTextContainerComponent } from './button-and-random-text-container/button-and-random-text-container.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CardComponent } from './card/card.component';
     AsideComponent,
     FooterComponent,
     MainSectionComponent,
-    CardComponent
+    CardComponent,
+    ButtonComponent,
+    RandomTextComponentComponent,
+    ButtonAndRandomTextContainerComponent
   ],
   imports: [
     BrowserModule
