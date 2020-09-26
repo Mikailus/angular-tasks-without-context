@@ -1,9 +1,9 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appOnMouseoverEnlarge]'
+  selector: '[appChangeDimensions]'
 })
-export class OnMouseoverEnlargeDirective {
+export class ChangeDimensionsDirective {
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 
@@ -21,6 +21,14 @@ export class OnMouseoverEnlargeDirective {
 
     this.renderer.setStyle(this.el.nativeElement, 'height', `${height - 5}px`);
     this.renderer.setStyle(this.el.nativeElement, 'width', `${width - 5}px`);
+  }
+
+  @HostListener('click') permanentlyEnlarge(): void {
+    const height: number = this.el.nativeElement.getBoundingClientRect().height;
+    const width: number = this.el.nativeElement.getBoundingClientRect().width;
+
+    this.renderer.setStyle(this.el.nativeElement, 'height', `${height + 5}px`);
+    this.renderer.setStyle(this.el.nativeElement, 'width', `${width + 5}px`);
   }
 
 }
