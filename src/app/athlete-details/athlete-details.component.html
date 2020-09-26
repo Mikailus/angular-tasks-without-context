@@ -10,6 +10,13 @@
     class="input-error">
     Pole jest wymagane
   </p>
+  <p *ngIf="
+    athleteForm.get('name').touched
+    && athleteForm.get('name').errors
+    && athleteForm.get('name').errors.notNull"
+    class="input-error">
+    Pole nie może zawierać samych spacji
+  </p>
 
   <label>
     <span>Surname</span>
@@ -21,6 +28,13 @@
     && athleteForm.get('surname').errors.required"
     class="input-error">
     Pole jest wymagane
+  </p>
+  <p *ngIf="
+    athleteForm.get('surname').touched
+    && athleteForm.get('surname').errors
+    && athleteForm.get('surname').errors.notNull"
+    class="input-error">
+    Pole nie może zawierać samych spacji
   </p>
 
   <label>
@@ -60,6 +74,13 @@
     class="input-error">
     Pole musi zawierać minimum 8 znaków
   </p>
+  <p *ngIf="
+    athleteForm.get('password').touched
+    && athleteForm.get('password').errors
+    && athleteForm.get('password').errors.notNull"
+    class="input-error">
+    Pole nie może zawierać samych spacji
+  </p>
 
   <fieldset formGroupName="address">
     <legend>Address</legend>
@@ -68,16 +89,37 @@
       <span>Town</span>
       <input type="text" placeholder="Szczecin" formControlName="town">
     </label>
+    <p *ngIf="
+      athleteForm.get('address').get('town').touched
+      && athleteForm.get('address').get('town').errors
+      && athleteForm.get('address').get('town').errors.notNull"
+      class="input-error">
+      Pole nie może zawierać samych spacji
+    </p>
 
     <label>
       <span>Street</span>
       <input type="text" placeholder="Akacjowa" formControlName="street">
     </label>
+    <p *ngIf="
+      athleteForm.get('address').get('street').touched
+      && athleteForm.get('address').get('street').errors
+      && athleteForm.get('address').get('street').errors.notNull"
+      class="input-error">
+      Pole nie może zawierać samych spacji
+    </p>
 
     <label>
       <span>Postcode</span>
       <input type="text" placeholder="56343" formControlName="postalCode">
     </label>
+    <p *ngIf="
+      athleteForm.get('address').get('postalCode').touched
+      && athleteForm.get('address').get('postalCode').errors
+      && athleteForm.get('address').get('postalCode').errors.notNull"
+      class="input-error">
+      Pole nie może zawierać samych spacji
+    </p>
   </fieldset>
 
   <label>
@@ -98,6 +140,13 @@
     class="input-error">
     Pole powinno mieć format email@example.com
   </p>
+  <p *ngIf="
+    athleteForm.get('email').touched
+    && athleteForm.get('email').errors
+    && athleteForm.get('email').errors.notNull"
+    class="input-error">
+    Pole nie może zawierać samych spacji
+  </p>
 
   <label>
     <span>Phone number</span>
@@ -109,6 +158,13 @@
     && athleteForm.get('phoneNumber').errors.pattern"
     class="input-error">
     Pole może mieć tylko liczby
+  </p>
+  <p *ngIf="
+    athleteForm.get('phoneNumber').touched
+    && athleteForm.get('phoneNumber').errors
+    && athleteForm.get('phoneNumber').errors.notNull"
+    class="input-error">
+    Pole nie może zawierać samych spacji
   </p>
 
   <label>

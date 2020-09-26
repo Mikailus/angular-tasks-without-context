@@ -4,6 +4,7 @@ import { DataProviderService } from '../data-provider.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Athlete } from '../interfaces/athlete.interface';
+import { notNullValidator } from '../validators/not-null.validator';
 
 @Component({
   selector: 'app-athlete-details',
@@ -19,16 +20,16 @@ export class AthleteDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.athleteForm = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      surname: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required, notNullValidator]),
+      surname: new FormControl(null, [Validators.required, notNullValidator]),
       age: new FormControl(null, [Validators.required, Validators.pattern(/^\d+$/)]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      password: new FormControl(null, [Validators.required, notNullValidator, Validators.minLength(8)]),
       address: new FormGroup({
-        town: new FormControl(),
-        street: new FormControl(),
-        postalCode: new FormControl()
+        town: new FormControl(null, [notNullValidator]),
+        street: new FormControl(null, [notNullValidator]),
+        postalCode: new FormControl(null, [notNullValidator])
       }),
-      email: new FormControl(null, [Validators.required, Validators.email]),
+      email: new FormControl(null, [Validators.required, notNullValidator, Validators.email]),
       phoneNumber: new FormControl(null, [Validators.pattern(/^\d+$/)]),
       isContactAvailable: new FormControl(),
       isActive: new FormControl(false, [Validators.required]),
