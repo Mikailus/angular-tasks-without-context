@@ -14,6 +14,7 @@ import { CounterComponent } from './counter/counter.component';
 import { AsyncCounterComponent } from './async-counter/async-counter.component';
 import { SizesComponent } from './sizes/sizes.component';
 import { SizeComponent } from './size/size.component';
+import { IndicatorComponent } from './indicator/indicator.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SizeComponent } from './size/size.component';
     CounterComponent,
     AsyncCounterComponent,
     SizesComponent,
-    SizeComponent
+    SizeComponent,
+    IndicatorComponent
   ],
   imports: [
     BrowserModule
