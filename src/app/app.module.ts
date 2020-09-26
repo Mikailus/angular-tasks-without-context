@@ -10,6 +10,7 @@ import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 import { RandomTextComponentComponent } from './random-text-component/random-text-component.component';
 import { ButtonAndRandomTextContainerComponent } from './button-and-random-text-container/button-and-random-text-container.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ButtonAndRandomTextContainerComponent } from './button-and-random-text-
     CardComponent,
     ButtonComponent,
     RandomTextComponentComponent,
-    ButtonAndRandomTextContainerComponent
+    ButtonAndRandomTextContainerComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule
