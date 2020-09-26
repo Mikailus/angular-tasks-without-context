@@ -43,6 +43,7 @@ import { AthleteDetailsComponent } from './athlete-details/athlete-details.compo
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
 import { RandomValueComponentExampleComponent } from './random-value-component-example/random-value-component-example.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { RandomValueComponentExampleComponent } from './random-value-component-e
     RandomValueComponentExampleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

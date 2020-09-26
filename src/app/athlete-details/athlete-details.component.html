@@ -1,1 +1,76 @@
-<p>athlete-details works!</p>
+<form [formGroup]="athleteForm">
+  <label>
+    <span>Name</span>
+    <input type="text" placeholder="Maria" formControlName="name">
+  </label>
+
+  <label>
+    <span>Surname</span>
+    <input type="text" placeholder="Nowak" formControlName="surname">
+  </label>
+
+  <label>
+    <span>Age</span>
+    <input type="number" placeholder="23" formControlName="age">
+  </label>
+
+  <label>
+    <span>Password</span>
+    <input type="password" placeholder="*****" formControlName="password">
+  </label>
+
+  <fieldset formGroupName="address">
+    <legend>Address</legend>
+
+    <label>
+      <span>Town</span>
+      <input type="text" placeholder="Szczecin" formControlName="town">
+    </label>
+
+    <label>
+      <span>Street</span>
+      <input type="text" placeholder="Akacjowa" formControlName="street">
+    </label>
+
+    <label>
+      <span>Postcode</span>
+      <input type="text" placeholder="56343" formControlName="postalCode">
+    </label>
+  </fieldset>
+
+  <label>
+    <span>Email</span>
+    <input type="text" placeholder="123451234" formControlName="email">
+  </label>
+
+  <label>
+    <span>Phone number</span>
+    <input type="text" placeholder="123451234" formControlName="phoneNumber">
+  </label>
+
+  <label>
+    <span>Accept contact</span>
+    <input type="checkbox" formControlName="isContactAvailable">
+  </label>
+
+  <p>Is regularly exercising</p>
+  <label>
+    Yes
+    <input type="radio" name="isActive" [value]="true" formControlName="isActive">
+  </label>
+  <label>
+    No
+    <input type="radio" name="isActive" [value]="false" formControlName="isActive">
+  </label>
+
+  <label>
+    <span>Favourite sport discipline</span>
+    <select formControlName="favouriteSportDiscipline">
+      <option value="running">Running</option>
+      <option value="swimming">Swimming</option>
+      <option value="walking">Walking</option>
+    </select>
+  </label>
+</form>
+
+<p>{{ formValue | json }}</p>
