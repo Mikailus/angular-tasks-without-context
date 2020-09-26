@@ -62,6 +62,13 @@
     class="input-error">
     Pole może zawierać liczbę z przedziału 18 - 100
   </p>
+  <p *ngIf="
+    athleteForm.get('age').touched
+    && athleteForm.get('age').errors
+    && athleteForm.get('age').errors.isValueHigher"
+    class="input-error">
+    Pole ma liczbę mniejszą niż losowa
+  </p>
 
   <label>
     <span>Password</span>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,9 @@ import { Observable, of } from 'rxjs';
 export class RandomValueService {
   public getRandomValue(): Observable<number> {
     const value: number = Math.round(Math.random() * 100);
-    return of(value);
+    return of(value)
+      .pipe(
+        delay(2000)
+      );
   }
 }

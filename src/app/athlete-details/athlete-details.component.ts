@@ -6,6 +6,8 @@ import { takeUntil } from 'rxjs/operators';
 import { Athlete } from '../interfaces/athlete.interface';
 import { notNullValidator } from '../validators/not-null.validator';
 import { ageRangeValidator } from '../validators/age-range.validator';
+import { isValueHigherThanRandomValidator } from '../validators/is-value-higher-than-random.validator';
+import { RandomValueService } from '../random-value.service';
 
 @Component({
   selector: 'app-athlete-details',
@@ -17,13 +19,19 @@ export class AthleteDetailsComponent implements OnInit, OnDestroy {
   public formValue: Athlete;
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  constructor(private dataService: DataProviderService) { }
+  constructor(
+    private dataService: DataProviderService,
+    private randomValueService: RandomValueService) { }
 
   ngOnInit(): void {
     this.athleteForm = new FormGroup({
       name: new FormControl(null, [Validators.required, notNullValidator]),
       surname: new FormControl(null, [Validators.required, notNullValidator]),
-      age: new FormControl(null, [Validators.required, Validators.pattern(/^\d+$/), ageRangeValidator]),
+      age: new FormControl(
+        null,
+        [Validators.required, Validators.pattern(/^\d+$/), ageRangeValidator],
+        [isValueHigherThanRandomValidator(this.randomValueService)]
+      ),
       password: new FormControl(null, [Validators.required, notNullValidator, Validators.minLength(8)]),
       address: new FormGroup({
         town: new FormControl(null, [notNullValidator]),
