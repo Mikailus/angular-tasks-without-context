@@ -29,6 +29,8 @@ import { CeilPipe } from './ceil.pipe';
 import { CeilExamplesComponent } from './ceil-examples/ceil-examples.component';
 import { FloorPipe } from './floor.pipe';
 import { FloorExamplesComponent } from './floor-examples/floor-examples.component';
+import { DotToCommaPipe } from './dot-to-comma.pipe';
+import { DotToCommaExamplesComponent } from './dot-to-comma-examples/dot-to-comma-examples.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { FloorExamplesComponent } from './floor-examples/floor-examples.componen
     CeilPipe,
     CeilExamplesComponent,
     FloorPipe,
-    FloorExamplesComponent
+    FloorExamplesComponent,
+    DotToCommaPipe,
+    DotToCommaExamplesComponent
   ],
   imports: [
     BrowserModule
