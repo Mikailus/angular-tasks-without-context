@@ -3,21 +3,63 @@
     <span>Name</span>
     <input type="text" placeholder="Maria" formControlName="name">
   </label>
+  <p *ngIf="
+    athleteForm.get('name').touched
+    && athleteForm.get('name').errors
+    && athleteForm.get('name').errors.required"
+    class="input-error">
+    Pole jest wymagane
+  </p>
 
   <label>
     <span>Surname</span>
     <input type="text" placeholder="Nowak" formControlName="surname">
   </label>
+  <p *ngIf="
+    athleteForm.get('surname').touched
+    && athleteForm.get('surname').errors
+    && athleteForm.get('surname').errors.required"
+    class="input-error">
+    Pole jest wymagane
+  </p>
 
   <label>
     <span>Age</span>
     <input type="number" placeholder="23" formControlName="age">
   </label>
+  <p *ngIf="
+    athleteForm.get('age').touched
+    && athleteForm.get('age').errors
+    && athleteForm.get('age').errors.required"
+    class="input-error">
+    Pole jest wymagane
+  </p>
+  <p *ngIf="
+    athleteForm.get('age').touched
+    && athleteForm.get('age').errors
+    && athleteForm.get('age').errors.pattern"
+    class="input-error">
+    Pole może mieć tylko liczby
+  </p>
 
   <label>
     <span>Password</span>
     <input type="password" placeholder="*****" formControlName="password">
   </label>
+  <p *ngIf="
+    athleteForm.get('password').touched
+    && athleteForm.get('password').errors
+    && athleteForm.get('password').errors.required"
+    class="input-error">
+    Pole jest wymagane
+  </p>
+  <p *ngIf="
+    athleteForm.get('password').touched
+    && athleteForm.get('password').errors
+    && athleteForm.get('password').errors.minLength"
+    class="input-error">
+    Pole musi zawierać minimum 8 znaków
+  </p>
 
   <fieldset formGroupName="address">
     <legend>Address</legend>
@@ -42,11 +84,32 @@
     <span>Email</span>
     <input type="text" placeholder="123451234" formControlName="email">
   </label>
+  <p *ngIf="
+    athleteForm.get('email').touched
+    && athleteForm.get('email').errors
+    && athleteForm.get('email').errors.required"
+    class="input-error">
+    Pole jest wymagane
+  </p>
+  <p *ngIf="
+    athleteForm.get('email').touched
+    && athleteForm.get('email').errors
+    && athleteForm.get('email').errors.email"
+    class="input-error">
+    Pole powinno mieć format email@example.com
+  </p>
 
   <label>
     <span>Phone number</span>
     <input type="text" placeholder="123451234" formControlName="phoneNumber">
   </label>
+  <p *ngIf="
+    athleteForm.get('phoneNumber').touched
+    && athleteForm.get('phoneNumber').errors
+    && athleteForm.get('phoneNumber').errors.pattern"
+    class="input-error">
+    Pole może mieć tylko liczby
+  </p>
 
   <label>
     <span>Accept contact</span>
@@ -62,6 +125,13 @@
     No
     <input type="radio" name="isActive" [value]="false" formControlName="isActive">
   </label>
+  <p *ngIf="
+    athleteForm.get('isActive').touched
+    && athleteForm.get('isActive').errors
+    && athleteForm.get('isActive').errors.required"
+    class="input-error">
+    Pole jest wymagane
+  </p>
 
   <label>
     <span>Favourite sport discipline</span>

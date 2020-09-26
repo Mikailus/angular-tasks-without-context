@@ -11,6 +11,11 @@ input {
   margin-left: 10px;
 }
 
-.ng-invalid {
+.input-error {
+  font-size: 10px;
+  color: red;
+}
+
+.ng-touched.ng-invalid {
   border: 1px solid red;
 }
