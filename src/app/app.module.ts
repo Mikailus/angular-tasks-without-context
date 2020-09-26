@@ -27,6 +27,8 @@ import { ModuloPipe } from './modulo.pipe';
 import { ModuloExamplesComponent } from './modulo-examples/modulo-examples.component';
 import { CeilPipe } from './ceil.pipe';
 import { CeilExamplesComponent } from './ceil-examples/ceil-examples.component';
+import { FloorPipe } from './floor.pipe';
+import { FloorExamplesComponent } from './floor-examples/floor-examples.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { CeilExamplesComponent } from './ceil-examples/ceil-examples.component';
     ModuloPipe,
     ModuloExamplesComponent,
     CeilPipe,
-    CeilExamplesComponent
+    CeilExamplesComponent,
+    FloorPipe,
+    FloorExamplesComponent
   ],
   imports: [
     BrowserModule
