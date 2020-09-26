@@ -17,6 +17,8 @@ import { SizeComponent } from './size/size.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { RandomImageComponent } from './random-image/random-image.component';
 import { ChangeDimensionsDirective } from './change-dimensions.directive';
+import { ForbiddenWordsHighlightDirective } from './forbidden-words-highlight.directive';
+import { ForbiddenWordsComponent } from './forbidden-words/forbidden-words.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ChangeDimensionsDirective } from './change-dimensions.directive';
     SizeComponent,
     IndicatorComponent,
     RandomImageComponent,
-    ChangeDimensionsDirective
+    ChangeDimensionsDirective,
+    ForbiddenWordsHighlightDirective,
+    ForbiddenWordsComponent
   ],
   imports: [
     BrowserModule
