@@ -35,6 +35,8 @@ import { HyphenToSpacePipe } from './hyphen-to-space.pipe';
 import { HyphenToSpaceExamplesComponent } from './hyphen-to-space-examples/hyphen-to-space-examples.component';
 import { AppendWordPipe } from './append-word.pipe';
 import { AppendExamplesComponent } from './append-examples/append-examples.component';
+import { DecimalToBinaryPipe } from './decimal-to-binary.pipe';
+import { DecimalToBinaryExamplesComponent } from './decimal-to-binary-examples/decimal-to-binary-examples.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { AppendExamplesComponent } from './append-examples/append-examples.compo
     HyphenToSpacePipe,
     HyphenToSpaceExamplesComponent,
     AppendWordPipe,
-    AppendExamplesComponent
+    AppendExamplesComponent,
+    DecimalToBinaryPipe,
+    DecimalToBinaryExamplesComponent
   ],
   imports: [
     BrowserModule
