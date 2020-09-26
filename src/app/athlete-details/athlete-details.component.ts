@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataProviderService } from '../data-provider.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -19,19 +19,19 @@ export class AthleteDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.athleteForm = new FormGroup({
-      name: new FormControl(),
-      surname: new FormControl(),
-      age: new FormControl(),
-      password: new FormControl(),
+      name: new FormControl(null, [Validators.required]),
+      surname: new FormControl(null, [Validators.required]),
+      age: new FormControl(null, [Validators.required, Validators.pattern(/^\d+$/)]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       address: new FormGroup({
         town: new FormControl(),
         street: new FormControl(),
         postalCode: new FormControl()
       }),
-      email: new FormControl(),
-      phoneNumber: new FormControl(),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      phoneNumber: new FormControl(null, [Validators.pattern(/^\d+$/)]),
       isContactAvailable: new FormControl(),
-      isActive: new FormControl(),
+      isActive: new FormControl(false, [Validators.required]),
       favouriteSportDiscipline: new FormControl(),
     });
 
