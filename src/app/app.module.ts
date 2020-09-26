@@ -12,6 +12,8 @@ import { RandomTextComponentComponent } from './random-text-component/random-tex
 import { ButtonAndRandomTextContainerComponent } from './button-and-random-text-container/button-and-random-text-container.component';
 import { CounterComponent } from './counter/counter.component';
 import { AsyncCounterComponent } from './async-counter/async-counter.component';
+import { SizesComponent } from './sizes/sizes.component';
+import { SizeComponent } from './size/size.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AsyncCounterComponent } from './async-counter/async-counter.component';
     RandomTextComponentComponent,
     ButtonAndRandomTextContainerComponent,
     CounterComponent,
-    AsyncCounterComponent
+    AsyncCounterComponent,
+    SizesComponent,
+    SizeComponent
   ],
   imports: [
     BrowserModule
