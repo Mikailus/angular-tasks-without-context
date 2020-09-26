@@ -42,6 +42,7 @@ import { ObjectKeysExamplesComponent } from './object-keys-examples/object-keys-
 import { AthleteDetailsComponent } from './athlete-details/athlete-details.component';
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
+import { RandomValueComponentExampleComponent } from './random-value-component-example/random-value-component-example.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { Child2Component } from './child2/child2.component';
     ObjectKeysExamplesComponent,
     AthleteDetailsComponent,
     Child1Component,
-    Child2Component
+    Child2Component,
+    RandomValueComponentExampleComponent
   ],
   imports: [
     BrowserModule
