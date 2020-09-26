@@ -19,6 +19,7 @@ import { RandomImageComponent } from './random-image/random-image.component';
 import { ChangeDimensionsDirective } from './change-dimensions.directive';
 import { ForbiddenWordsHighlightDirective } from './forbidden-words-highlight.directive';
 import { ForbiddenWordsComponent } from './forbidden-words/forbidden-words.component';
+import { ForbiddenWordsHighlight2Directive } from './forbidden-words-highlight-2.directive';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ForbiddenWordsComponent } from './forbidden-words/forbidden-words.compo
     RandomImageComponent,
     ChangeDimensionsDirective,
     ForbiddenWordsHighlightDirective,
-    ForbiddenWordsComponent
+    ForbiddenWordsComponent,
+    ForbiddenWordsHighlight2Directive
   ],
   imports: [
     BrowserModule
