@@ -30,3 +30,7 @@
   border: 1px solid #000;
   box-sizing: border-box;
 }
+
+.link {
+  margin: 0 20px;
+}

@@ -44,6 +44,19 @@ import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
 import { RandomValueComponentExampleComponent } from './random-value-component-example/random-value-component-example.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CoursesComponent } from './courses/courses.component';
+import { ProgressComponent } from './progress/progress.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { Route, RouterModule } from '@angular/router';
+
+const routes: Route[] = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'courses', component: CoursesComponent },
+  { path: 'progress', component: ProgressComponent },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' }
+]
 
 @NgModule({
   declarations: [
@@ -88,11 +101,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     AthleteDetailsComponent,
     Child1Component,
     Child2Component,
-    RandomValueComponentExampleComponent
+    RandomValueComponentExampleComponent,
+    DashboardComponent,
+    CoursesComponent,
+    ProgressComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
