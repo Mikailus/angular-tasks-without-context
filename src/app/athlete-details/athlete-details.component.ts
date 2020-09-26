@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Athlete } from '../interfaces/athlete.interface';
 import { notNullValidator } from '../validators/not-null.validator';
+import { ageRangeValidator } from '../validators/age-range.validator';
 
 @Component({
   selector: 'app-athlete-details',
@@ -22,7 +23,7 @@ export class AthleteDetailsComponent implements OnInit, OnDestroy {
     this.athleteForm = new FormGroup({
       name: new FormControl(null, [Validators.required, notNullValidator]),
       surname: new FormControl(null, [Validators.required, notNullValidator]),
-      age: new FormControl(null, [Validators.required, Validators.pattern(/^\d+$/)]),
+      age: new FormControl(null, [Validators.required, Validators.pattern(/^\d+$/), ageRangeValidator]),
       password: new FormControl(null, [Validators.required, notNullValidator, Validators.minLength(8)]),
       address: new FormGroup({
         town: new FormControl(null, [notNullValidator]),

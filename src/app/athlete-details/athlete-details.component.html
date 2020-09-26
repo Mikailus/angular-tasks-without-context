@@ -55,6 +55,13 @@
     class="input-error">
     Pole może mieć tylko liczby
   </p>
+  <p *ngIf="
+    athleteForm.get('age').touched
+    && athleteForm.get('age').errors
+    && athleteForm.get('age').errors.ageRange"
+    class="input-error">
+    Pole może zawierać liczbę z przedziału 18 - 100
+  </p>
 
   <label>
     <span>Password</span>
