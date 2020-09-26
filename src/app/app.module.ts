@@ -33,6 +33,8 @@ import { DotToCommaPipe } from './dot-to-comma.pipe';
 import { DotToCommaExamplesComponent } from './dot-to-comma-examples/dot-to-comma-examples.component';
 import { HyphenToSpacePipe } from './hyphen-to-space.pipe';
 import { HyphenToSpaceExamplesComponent } from './hyphen-to-space-examples/hyphen-to-space-examples.component';
+import { AppendWordPipe } from './append-word.pipe';
+import { AppendExamplesComponent } from './append-examples/append-examples.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { HyphenToSpaceExamplesComponent } from './hyphen-to-space-examples/hyphe
     DotToCommaPipe,
     DotToCommaExamplesComponent,
     HyphenToSpacePipe,
-    HyphenToSpaceExamplesComponent
+    HyphenToSpaceExamplesComponent,
+    AppendWordPipe,
+    AppendExamplesComponent
   ],
   imports: [
     BrowserModule
