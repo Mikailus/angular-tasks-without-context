@@ -45,6 +45,8 @@ export class AthleteDetailsComponent implements OnInit, OnDestroy {
       favouriteSportDiscipline: new FormControl(),
     });
 
+    this.dataService.getData().subscribe((athlete: Athlete) => this.athleteForm.patchValue(athlete));
+
     this.athleteForm.valueChanges
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(v => this.formValue = v);
