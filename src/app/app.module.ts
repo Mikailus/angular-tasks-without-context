@@ -20,6 +20,8 @@ import { ChangeDimensionsDirective } from './change-dimensions.directive';
 import { ForbiddenWordsHighlightDirective } from './forbidden-words-highlight.directive';
 import { ForbiddenWordsComponent } from './forbidden-words/forbidden-words.component';
 import { ForbiddenWordsHighlight2Directive } from './forbidden-words-highlight-2.directive';
+import { NoDataDirective } from './no-data.directive';
+import { NoDataAvailableComponent } from './no-data-available/no-data-available.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ForbiddenWordsHighlight2Directive } from './forbidden-words-highlight-2
     ChangeDimensionsDirective,
     ForbiddenWordsHighlightDirective,
     ForbiddenWordsComponent,
-    ForbiddenWordsHighlight2Directive
+    ForbiddenWordsHighlight2Directive,
+    NoDataDirective,
+    NoDataAvailableComponent
   ],
   imports: [
     BrowserModule
