@@ -53,6 +53,7 @@ import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { FavouriteCourseComponent } from './favourite-course/favourite-course.component';
 import { CourseComponent } from './course/course.component';
 import { CourseGuardService } from './course-guard.service';
+import { ProgressGuardService } from './progress-guard.service';
 
 const routes: Route[] = [
   { path: 'dashboard', component: DashboardComponent },
@@ -66,7 +67,7 @@ const routes: Route[] = [
       { path: ':courseName', component: CourseComponent }
     ]
   },
-  { path: 'progress', component: ProgressComponent },
+  { path: 'progress', component: ProgressComponent, canActivate: [ ProgressGuardService ] },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
 ]
