@@ -49,10 +49,21 @@ import { CoursesComponent } from './courses/courses.component';
 import { ProgressComponent } from './progress/progress.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { Route, RouterModule } from '@angular/router';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { FavouriteCourseComponent } from './favourite-course/favourite-course.component';
+import { CourseComponent } from './course/course.component';
 
 const routes: Route[] = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'courses', component: CoursesComponent },
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    children: [
+      { path: 'my-courses', component: MyCoursesComponent },
+      { path: 'favourite', component: FavouriteCourseComponent },
+      { path: ':courseName', component: CourseComponent }
+    ]
+  },
   { path: 'progress', component: ProgressComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
@@ -105,14 +116,19 @@ const routes: Route[] = [
     DashboardComponent,
     CoursesComponent,
     ProgressComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MyCoursesComponent,
+    FavouriteCourseComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    HyphenToSpacePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
