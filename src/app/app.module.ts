@@ -54,20 +54,22 @@ import { FavouriteCourseComponent } from './favourite-course/favourite-course.co
 import { CourseComponent } from './course/course.component';
 import { CourseGuardService } from './course-guard.service';
 import { ProgressGuardService } from './progress-guard.service';
+import { DeactivateGuardService } from './deactivate-guard.service';
 
 const routes: Route[] = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canDeactivate: [ DeactivateGuardService ], },
   {
     path: 'courses',
     component: CoursesComponent,
     canActivate: [ CourseGuardService ],
+    canDeactivate: [ DeactivateGuardService ],
     children: [
       { path: 'my-courses', component: MyCoursesComponent },
       { path: 'favourite', component: FavouriteCourseComponent },
       { path: ':courseName', component: CourseComponent }
     ]
   },
-  { path: 'progress', component: ProgressComponent, canActivate: [ ProgressGuardService ] },
+  { path: 'progress', component: ProgressComponent, canActivate: [ ProgressGuardService ], canDeactivate: [ DeactivateGuardService ], },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
 ]
