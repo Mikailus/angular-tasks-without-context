@@ -39,6 +39,7 @@ import { DecimalToBinaryPipe } from './decimal-to-binary.pipe';
 import { DecimalToBinaryExamplesComponent } from './decimal-to-binary-examples/decimal-to-binary-examples.component';
 import { ObjectKeysPipe } from './object-keys.pipe';
 import { ObjectKeysExamplesComponent } from './object-keys-examples/object-keys-examples.component';
+import { AthleteDetailsComponent } from './athlete-details/athlete-details.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { ObjectKeysExamplesComponent } from './object-keys-examples/object-keys-
     DecimalToBinaryPipe,
     DecimalToBinaryExamplesComponent,
     ObjectKeysPipe,
-    ObjectKeysExamplesComponent
+    ObjectKeysExamplesComponent,
+    AthleteDetailsComponent
   ],
   imports: [
     BrowserModule
