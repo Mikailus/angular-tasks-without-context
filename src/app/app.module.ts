@@ -22,6 +22,7 @@ import { ForbiddenWordsComponent } from './forbidden-words/forbidden-words.compo
 import { ForbiddenWordsHighlight2Directive } from './forbidden-words-highlight-2.directive';
 import { NoDataDirective } from './no-data.directive';
 import { NoDataAvailableComponent } from './no-data-available/no-data-available.component';
+import { CanBeVisibleDirective } from './can-be-visible.directive';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NoDataAvailableComponent } from './no-data-available/no-data-available.
     ForbiddenWordsComponent,
     ForbiddenWordsHighlight2Directive,
     NoDataDirective,
-    NoDataAvailableComponent
+    NoDataAvailableComponent,
+    CanBeVisibleDirective
   ],
   imports: [
     BrowserModule
