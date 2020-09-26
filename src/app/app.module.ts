@@ -37,6 +37,8 @@ import { AppendWordPipe } from './append-word.pipe';
 import { AppendExamplesComponent } from './append-examples/append-examples.component';
 import { DecimalToBinaryPipe } from './decimal-to-binary.pipe';
 import { DecimalToBinaryExamplesComponent } from './decimal-to-binary-examples/decimal-to-binary-examples.component';
+import { ObjectKeysPipe } from './object-keys.pipe';
+import { ObjectKeysExamplesComponent } from './object-keys-examples/object-keys-examples.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { DecimalToBinaryExamplesComponent } from './decimal-to-binary-examples/d
     AppendWordPipe,
     AppendExamplesComponent,
     DecimalToBinaryPipe,
-    DecimalToBinaryExamplesComponent
+    DecimalToBinaryExamplesComponent,
+    ObjectKeysPipe,
+    ObjectKeysExamplesComponent
   ],
   imports: [
     BrowserModule
