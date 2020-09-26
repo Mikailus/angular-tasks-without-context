@@ -15,6 +15,7 @@ import { AsyncCounterComponent } from './async-counter/async-counter.component';
 import { SizesComponent } from './sizes/sizes.component';
 import { SizeComponent } from './size/size.component';
 import { IndicatorComponent } from './indicator/indicator.component';
+import { RandomImageComponent } from './random-image/random-image.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { IndicatorComponent } from './indicator/indicator.component';
     AsyncCounterComponent,
     SizesComponent,
     SizeComponent,
-    IndicatorComponent
+    IndicatorComponent,
+    RandomImageComponent
   ],
   imports: [
     BrowserModule
