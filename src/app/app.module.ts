@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -55,9 +56,15 @@ import { CourseComponent } from './course/course.component';
 import { CourseGuardService } from './course-guard.service';
 import { ProgressGuardService } from './progress-guard.service';
 import { DeactivateGuardService } from './deactivate-guard.service';
+import { DashboardResolverService } from './dashboard-resolver.service';
 
 const routes: Route[] = [
-  { path: 'dashboard', component: DashboardComponent, canDeactivate: [ DeactivateGuardService ], },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canDeactivate: [ DeactivateGuardService ],
+    resolve: { paragraphs: DashboardResolverService }
+  },
   {
     path: 'courses',
     component: CoursesComponent,
@@ -129,7 +136,8 @@ const routes: Route[] = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [
     HyphenToSpacePipe
