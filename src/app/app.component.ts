@@ -9,6 +9,7 @@ import { Router, Event, NavigationEnd, NavigationCancel, NavigationError, Naviga
 export class AppComponent {
   private startTime: number;
   private stopTime: number;
+  private readonly allowedUrl = 'dashboard';
   public time: number;
 
   constructor(private router: Router) {
@@ -17,16 +18,24 @@ export class AppComponent {
     });
   }
 
-  private checkEvent(routerEvent : Event) : void {
-    if (routerEvent instanceof NavigationStart) {
-      this.startTime = Date.now();
-    }
+  // private checkEvent(routerEvent : Event) : void {
+  //   if (routerEvent instanceof NavigationStart) {
+  //     this.startTime = Date.now();
+  //   }
  
-    else if (routerEvent instanceof NavigationEnd ||
-             routerEvent instanceof NavigationCancel ||
-             routerEvent instanceof NavigationError) {
-      this.stopTime = Date.now();
-      this.time = this.stopTime - this.startTime;
+  //   else if (routerEvent instanceof NavigationEnd ||
+  //            routerEvent instanceof NavigationCancel ||
+  //            routerEvent instanceof NavigationError) {
+  //     this.stopTime = Date.now();
+  //     this.time = this.stopTime - this.startTime;
+  //   }
+  // }
+
+  private checkEvent(routerEvent: Event): void {
+    if (routerEvent instanceof NavigationStart) {
+      if (!routerEvent.url.includes(this.allowedUrl)) {
+        this.router.navigate([this.allowedUrl]);
+      }
     }
   }
 }
