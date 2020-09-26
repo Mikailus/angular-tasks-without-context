@@ -31,6 +31,8 @@ import { FloorPipe } from './floor.pipe';
 import { FloorExamplesComponent } from './floor-examples/floor-examples.component';
 import { DotToCommaPipe } from './dot-to-comma.pipe';
 import { DotToCommaExamplesComponent } from './dot-to-comma-examples/dot-to-comma-examples.component';
+import { HyphenToSpacePipe } from './hyphen-to-space.pipe';
+import { HyphenToSpaceExamplesComponent } from './hyphen-to-space-examples/hyphen-to-space-examples.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { DotToCommaExamplesComponent } from './dot-to-comma-examples/dot-to-comm
     FloorPipe,
     FloorExamplesComponent,
     DotToCommaPipe,
-    DotToCommaExamplesComponent
+    DotToCommaExamplesComponent,
+    HyphenToSpacePipe,
+    HyphenToSpaceExamplesComponent
   ],
   imports: [
     BrowserModule
